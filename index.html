@@ -86,7 +86,7 @@
           </nav>
           <div class="snippet">
             <h3 id="bouncing-loader"><span>Bouncing loader</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
-            <p>Creates a bouncing loader animation.</p>
+            <p>创建一个弹跳加载动画。</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="bouncing-loader"&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
@@ -160,36 +160,35 @@
                 animation-delay: 0.4s;
               }
             </style>
-            <h4>Explanation</h4>
-            <p>Note: <code>1rem</code> is usually <code>16px</code>.</p>
+            <h4>解释</h4>
+            <p>注意: <code>1rem</code> 就是 <code>16px</code>.</p>
             <ol>
               <li>
-                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code>, and is translated up on the 2D plane using <code>transform: translateY()</code>.</p>
+                <p><code>@keyframes</code>定义一个有两个状态的动画, 改变节点的透明度 <code>opacity</code>, 以及在2D平面的翻转<code>transform: translateY()</code>.</p>
               </li>
               <li>
-                <p><code>.bouncing-loader</code> is the parent container of the bouncing circles and uses <code>display: flex</code> and <code>justify-content: center</code> to position them in the in the center.</p>
+                <p><code>.bouncing-loader</code>是跳动圆圈的父容器，以及使用 <code>display: flex</code> 和 <code>justify-content: center</code> 来将它们定位到中间.</p>
               </li>
               <li>
-                <p>Using <code>.bouncing-loader &gt; div</code>, we target the three child <code>div</code>s of the parent to be styled. The <code>div</code>s are given a width and height of <code>1rem</code>, using <code>border-radius: 50%</code> to turn
-                  them from squares to circles.</p>
+                <p>使用 <code>.bouncing-loader &gt; div</code>, 我们赋给<code>div</code>相同样式. 给 <code>div</code>的长宽为 <code>1rem</code>, 使用 <code>border-radius: 50%</code> 改变圆角.</p>
               </li>
               <li>
-                <p><code>margin: 3rem 0.2rem</code> specifies that each circle has a top/bottom margin of <code>3rem</code> and left/right margin of <code>0.2rem</code> so that they do not directly touch each other, giving them some breathing room.</p>
+                <p><code>margin: 3rem 0.2rem</code> 给每个圆球上下间隔 <code>3rem</code> 以及左右间隔为 <code>0.2rem</code> 所以他们不会直接碰到各自, 这也给他们喘气的空间。</p>
               </li>
               <li>
-                <p><code>animation</code> is a shorthand property for the various animation properties: <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>, <code>animation-direction</code> are used.</p>
+                <p><code>animation</code>是下面三个特性的整合写法 <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>, <code>animation-direction</code> 。</p>
               </li>
               <li>
-                <p><code>animation-delay</code> is used on the second and third <code>div</code> respectively, so that each element does not start the animation at the same time.</p>
+                <p><code>animation-delay</code> 用来让第二个和第三个 <code>div</code>的效果分开, 所以这样每个圆球的动作都不会在同一个时间开始.</p>
               </li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器支持</h4>
             <div>
               <div class="snippet__browser-support">
                 95.3%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没啥警告</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-animation" target="_blank">https://caniuse.com/#feat=css-animation</a>
