@@ -1,6 +1,6 @@
 ### Bouncing loader
 
-Creates a bouncing loader animation.
+创建一个弹跳加载动画。
 
 #### HTML
 
@@ -86,27 +86,26 @@ Creates a bouncing loader animation.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-Note: `1rem` is usually `16px`.
+注意: `1rem` 就是 `16px`.
 
-1. `@keyframes` defines an animation that has two states, where the element changes `opacity`, and is translated up on the 2D plane using `transform: translateY()`.
+1. `@keyframes`定义一个有两个状态的动画, 改变节点的透明度 `opacity`, 以及在2D平面的翻转`transform: translateY()`.
 
-2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex`
-   and `justify-content: center` to position them in the in the center.
+2. `.bouncing-loader`是跳动圆圈的父容器，以及使用 `display: flex`
+   和 `justify-content: center` 来将它们定位到中间.
 
-3. Using `.bouncing-loader > div`, we target the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
+3. 使用 `.bouncing-loader > div`, 我们赋给`div`相同样式. 给 `div`的长宽为 `1rem`, 使用 `border-radius: 50%` 改变圆角.
 
-4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
-   of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
+4. `margin: 3rem 0.2rem` 给每个圆球上下间隔 `3rem` 以及左右间隔为 `0.2rem` 所以他们不会直接碰到各自, 这也给他们喘气的空间。
 
-5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
+5. `animation`是下面三个特性的整合写法 `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` 。
 
-6. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
+6. `animation-delay` 用来让第二个和第三个 `div`的效果分开, 所以这样每个圆球的动作都不会在同一个时间开始.
 
-#### Browser support
+#### 浏览器支持
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没啥警告</span>
 
 * https://caniuse.com/#feat=css-animation
 
