@@ -1,6 +1,6 @@
 ### Box-sizing reset
 
-Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
+重置 box-model，使`width`和 `height`不会被他们的 `border`或者`padding`影响.
 
 #### CSS
 
@@ -34,14 +34,14 @@ html {
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
-2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
+1. `box-sizing: border-box` 可以使添加的 `padding` 或者 `border`不影响组件的 `width` 或者 `height`.
+2. `box-sizing: inherit`可以使一个组件遵守他父组件的  `box-sizing` 规则.
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅没啥警告.</span>
 
 * https://caniuse.com/#feat=css3-boxsizing
 
