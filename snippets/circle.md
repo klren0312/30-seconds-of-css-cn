@@ -1,6 +1,6 @@
 ### Circle
 
-Creates a circle shape with pure CSS.
+使用纯CSS制作一个圆球。
 
 #### HTML
 
@@ -34,16 +34,15 @@ Creates a circle shape with pure CSS.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-`border-radius: 50%` curves the borders of an element to create a circle.
+`border-radius: 50%` 改变节点边框的圆角来创建一个圆。
 
-Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing
-values will create an ellipse.
+因为一个圆要在给定的点中半径相同，所以 `width` 和 `height` 必须相同。 两个值不同会创建一个椭圆。
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没啥警告.</span>
 
 * https://caniuse.com/#feat=border-radius
 
