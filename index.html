@@ -182,7 +182,7 @@
                 <p><code>animation-delay</code> 用来让第二个和第三个 <code>div</code>的效果分开, 所以这样每个圆球的动作都不会在同一个时间开始.</p>
               </li>
             </ol>
-            <h4>浏览器支持</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.3%
@@ -199,7 +199,7 @@
           </div>
           <div class="snippet">
             <h3 id="box-sizing-reset"><span>Box-sizing reset</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Resets the box-model so that <code>width</code>s and <code>height</code>s are not affected by their <code>border</code>s or <code>padding</code>.</p>
+            <p>重置 box-model，使<code>width</code>和 <code>height</code>不会被他们的 <code>border</code>或者<code>padding</code>影响.</p>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">html {
   box-sizing: border-box;
 }
@@ -224,18 +224,18 @@
                 border: 5px solid;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>box-sizing: border-box</code> makes the addition of <code>padding</code> or <code>border</code>s not affect an element's <code>width</code> or <code>height</code>.</li>
-              <li><code>box-sizing: inherit</code> makes an element respect its parent's <code>box-sizing</code> rule.</li>
+              <li><code>box-sizing: border-box</code> 可以使添加的 <code>padding</code> 或者 <code>border</code>不影响组件的 <code>width</code> 或者 <code>height</code>.</li>
+              <li><code>box-sizing: inherit</code>可以使一个组件遵守他父组件的 <code>box-sizing</code> 规则.</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅没啥警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css3-boxsizing" target="_blank">https://caniuse.com/#feat=css3-boxsizing</a>
@@ -246,7 +246,7 @@
           </div>
           <div class="snippet">
             <h3 id="circle"><span>Circle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Creates a circle shape with pure CSS.</p>
+            <p>使用纯CSS制作一个圆球。</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="circle"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.circle {
@@ -268,16 +268,16 @@
                 background: #333;
               }
             </style>
-            <h4>Explanation</h4>
-            <p><code>border-radius: 50%</code> curves the borders of an element to create a circle.</p>
-            <p>Since a circle has the same radius at any given point, the <code>width</code> and <code>height</code> must be the same. Differing values will create an ellipse.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p><code>border-radius: 50%</code> 改变节点边框的圆角来创建一个圆。</p>
+            <p>因为一个圆要在给定的点中半径相同，所以 <code>width</code> 和 <code>height</code> 必须相同。 两个值不同会创建一个椭圆。</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.5%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没啥警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=border-radius" target="_blank">https://caniuse.com/#feat=border-radius</a>
@@ -288,8 +288,8 @@
           </div>
           <div class="snippet">
             <h3 id="clearfix"><span>Clearfix</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Ensures that an element self-clears its children.</p>
-            <h6>Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.</h6>
+            <p>确保元素清楚了子元素对其的影响。</p>
+            <h6>Note: 这只有在你使用float来构建布局的情况下有用。请考虑使用一个现代的方式比如flexbox布局或者grid布局。</h6>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="clearfix"&gt;
   &lt;div class="floated"&gt;float a&lt;/div&gt;
   &lt;div class="floated"&gt;float b&lt;/div&gt;
@@ -323,19 +323,19 @@
                 float: left;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>.clearfix::after</code> defines a pseudo-element.</li>
-              <li><code>content: ''</code> allows the pseudo-element to affect layout.</li>
-              <li><code>clear: both</code> indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.</li>
+              <li><code>.clearfix::after</code> 定义一个伪元素。</li>
+              <li><code>content: ''</code> 允许这个伪元素去影响布局.</li>
+              <li><code>clear: both</code> 表面元素的左边，右边或者左右两边不能与邻近的浮动元素在相同的格式化上下文中。</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span></p>
+            <p><span class="snippet__support-note">⚠️ 这段代码要正常工作，就要确保在容器中没有未浮动的子元素，以及在清除浮动的容器时没有高浮动的元素，但是要在相同的格式化上下文中(比如 浮动的列).</span></p>
 
             <!-- tags: layout -->
           </div>
