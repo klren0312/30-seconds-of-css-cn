@@ -103,7 +103,7 @@
 
 6. `animation-delay` 用来让第二个和第三个 `div`的效果分开, 所以这样每个圆球的动作都不会在同一个时间开始.
 
-#### 浏览器支持
+#### 浏览器兼容性
 
 <span class="snippet__support-note">✅ 没啥警告</span>
 
