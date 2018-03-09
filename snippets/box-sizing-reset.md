@@ -1,4 +1,4 @@
-### Box-sizing reset
+### 重置Box-sizing
 
 重置 box-model，使`width`和 `height`不会被他们的 `border`或者`padding`影响.
 

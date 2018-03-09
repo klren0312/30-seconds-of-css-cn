@@ -1,12 +1,12 @@
-### Disable selection
+### 内容不可选中
 
-Makes the content unselectable.
+使内容不可选择
 
 #### HTML
 
 ```html
-<p>You can select me.</p>
-<p class="unselectable">You can't select me!</p>
+<p>你可以选择我.</p>
+<p class="unselectable">你不能选择我!</p>
 ```
 
 #### CSS
@@ -20,8 +20,8 @@ Makes the content unselectable.
 #### Demo
 
 <div class="snippet-demo">
-  <p>You can select me.</p>
-  <p class="snippet-demo__disable-selection">You can't select me!</p>
+  <p>你可以选择我.</p>
+  <p class="snippet-demo__disable-selection">你不能选择我!</p>
 </div>
 
 <style>
@@ -30,14 +30,14 @@ Makes the content unselectable.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-`user-select: none` specifies that the text cannot be selected.
+`user-select: none` 使文本不可选择.
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
-<span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span>
+<span class="snippet__support-note">⚠️ 需要前缀才能全部支持.</span>
+<span class="snippet__support-note">⚠️ 这不是一个安全的方法，对于防止用户来复制内容</span>
 
 * https://caniuse.com/#feat=user-select-none
 

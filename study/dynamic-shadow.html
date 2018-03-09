@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .dynamic-shadow-parent {
+      position: relative;
+      z-index: 1;
+    }
+    .dynamic-shadow {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      /* 渐变 */
+      background: linear-gradient(75deg, #6d78ff,#00ffb8)
+    }
+    .dynamic-shadow::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      /* 背景继承 */
+      background: inherit;
+      top: 0.5rem;
+      /* blur 高斯模糊
+       * filter 滤镜 
+       */
+      filter: blur(0.4rem);
+      opacity: 0.7;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="dynamic-shadow-parent">
+    <div class="dynamic-shadow"></div>
+  </div>
+</body>
+</html>

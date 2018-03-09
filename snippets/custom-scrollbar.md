@@ -1,5 +1,4 @@
-### Custom scrollbar
-
+### 自定义滚动条
 自定义内容和元素的滚动条, 可在 WebKit 内核的浏览器中使用.
 
 #### HTML

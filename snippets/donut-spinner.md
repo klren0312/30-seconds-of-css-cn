@@ -1,6 +1,6 @@
-### Donut spinner
+### 圆环加载动画
 
-Creates a donut spinner that can be used to indicate the loading of content.
+创建一个圆环加载圈，用来修饰一个正在加载的内容
 
 #### HTML
 
@@ -52,14 +52,14 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-Use a semi-transparent `border` for the whole element, except one side that will
+给整个元素使用一个半透明的 `border`, except one side that will
 serve as the loading indicator for the donut. Use `animation` to rotate the element.
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
+<span class="snippet__support-note">⚠️ 需要增加前缀才能支持.</span>
 
 * https://caniuse.com/#feat=css-animation
 * https://caniuse.com/#feat=transforms2d
