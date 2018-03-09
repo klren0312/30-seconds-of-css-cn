@@ -33,6 +33,7 @@
           <a class="sidebar__link" href="#circle"><span>Circle</span></a>
           <a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a>
           <a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a>
+          <a class="sidebar__link" href="#dynamic-shadow"><span>Dynamic shadow</span></a>
           <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
@@ -56,6 +57,10 @@
           <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
           <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
           <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
+        </section>
+        <section data-type="other" class="sidebar__section">
+          <h4 class="sidebar__section-heading">other</h4>
+          <a class="sidebar__link" href="#custom-variables"><span>Custom variables</span></a>
         </section>
       </div>
     </nav>
@@ -83,6 +88,8 @@
               <i data-feather="loader"></i>animation</button>
             <button class="tags__tag is-large " data-type="interactivity">
               <i data-feather="edit-2"></i>interactivity</button>
+            <button class="tags__tag is-large " data-type="other">
+              <i data-feather="tag"></i>other</button>
           </nav>
           <div class="snippet">
             <h3 id="bouncing-loader"><span>Bouncing loader</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
@@ -496,10 +503,67 @@
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <h3 id="custom-variables"><span>Custom variables</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
+            <p>包含特殊值的 CSS 变量可以在整个文档中使用</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="custom-variables"&gt;CSS is awesome!&lt;/p&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
+  --some-color: #da7800;
+  --some-keyword: italic;
+  --some-size: 1.25em;
+  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
+}
+.custom-variables {
+  color: var(--some-color);
+  font-size: var(--some-size);
+  font-style: var(--some-keyword);
+  text-shadow: var(--some-complex-value);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__custom-variables">
+                <p>CSS is awesome!</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__custom-variables {
+                --some-color: #686868;
+                --some-keyword: italic;
+                --some-size: 1.25em;
+                --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
+              }
+              .snippet-demo__custom-variables p {
+                color: var(--some-color);
+                font-size: var(--some-size);
+                font-style: var(--some-keyword);
+                text-shadow: var(--some-complex-value);
+              }
+            </style>
+            <h4>解释</h4>
+            <p>变量通过<code>:root</code> 这个CSS伪类定义到全局，这个伪类可以匹配文档树的根元素.变量也能被局限于一个选择器中，如果被定义在一个块里。 </p>
+            <p>声明一个变量，可以使用 <code>--variable-name:</code>.</p>
+            <p>在文档中使用变量，可以使用这个函数<code>var(--variable-name)</code> .</p>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                88.0%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没啥警告.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
+              </li>
+            </ul>
+
+            <!-- tags: other -->
+          </div>
+          <div class="snippet">
             <h3 id="disable-selection"><span>Disable selection</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
-            <p>Makes the content unselectable.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p&gt;You can select me.&lt;/p&gt;
-&lt;p class="unselectable"&gt;You can't select me!&lt;/p&gt;
+            <p>使内容不可选择</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p&gt;你可以选择我.&lt;/p&gt;
+&lt;p class="unselectable"&gt;你不能选择我!&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.unselectable {
   user-select: none;
@@ -507,24 +571,24 @@
 </code></pre>
             <h4>Demo</h4>
             <div class="snippet-demo">
-              <p>You can select me.</p>
-              <p class="snippet-demo__disable-selection">You can't select me!</p>
+              <p>你可以选择我.</p>
+              <p class="snippet-demo__disable-selection">你不能选择我!</p>
             </div>
             <style>
               .snippet-demo__disable-selection {
                 user-select: none;
               }
             </style>
-            <h4>Explanation</h4>
-            <p><code>user-select: none</code> specifies that the text cannot be selected.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p><code>user-select: none</code> 使文本不可选择.</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 87.2%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
-              <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span></p>
+            <p><span class="snippet__support-note">⚠️ 需要前缀才能全部支持.</span>
+              <span class="snippet__support-note">⚠️ 这不是一个安全的方法，对于防止用户来复制内容</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=user-select-none" target="_blank">https://caniuse.com/#feat=user-select-none</a>
@@ -535,7 +599,7 @@
           </div>
           <div class="snippet">
             <h3 id="donut-spinner"><span>Donut spinner</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
-            <p>Creates a donut spinner that can be used to indicate the loading of content.</p>
+            <p>创建一个圆环加载圈，用来修饰一个正在加载的内容</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="donut"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes donut-spin {
@@ -579,15 +643,15 @@
                 animation: snippet-demo__donut-spin 1.2s linear infinite;
               }
             </style>
-            <h4>Explanation</h4>
-            <p>Use a semi-transparent <code>border</code> for the whole element, except one side that will serve as the loading indicator for the donut. Use <code>animation</code> to rotate the element.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p>给整个元素使用一个半透明的 <code>border</code>, except one side that will serve as the loading indicator for the donut. Use <code>animation</code> to rotate the element.</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.3%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ 需要增加前缀才能支持.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-animation" target="_blank">https://caniuse.com/#feat=css-animation</a>
@@ -600,8 +664,96 @@
             <!-- tags: animation -->
           </div>
           <div class="snippet">
+            <h3 id="dynamic-shadow"><span>Dynamic shadow</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>创建一个与<code>box-shadow</code>类似的阴影，但是阴影颜色是基于元素自己的颜色.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="dynamic-shadow-parent"&gt;
+  &lt;div class="dynamic-shadow"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.dynamic-shadow-parent {
+  position: relative;
+  z-index: 1;
+}
+.dynamic-shadow {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  background: linear-gradient(75deg, #6d78ff, #00ffb8);
+}
+.dynamic-shadow::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  top: 0.5rem;
+  filter: blur(0.4rem);
+  opacity: 0.7;
+  z-index: -1;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__dynamic-shadow-parent">
+                <div class="snippet-demo__dynamic-shadow"></div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__dynamic-shadow-parent {
+                position: relative;
+                z-index: 1;
+              }
+              .snippet-demo__dynamic-shadow {
+                position: relative;
+                width: 10rem;
+                height: 10rem;
+                background: linear-gradient(75deg, #6d78ff, #00ffb8);
+              }
+              .snippet-demo__dynamic-shadow::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                top: 0.5rem;
+                filter: blur(0.4rem);
+                opacity: 0.7;
+                z-index: -1;
+              }
+            </style>
+            <h4>解释</h4>
+            <p>这个片段需要一个复杂的上下文堆砌才能实现, 这样伪元素将被定位在元素自身的下方，并且一直可见</p>
+            <ol>
+              <li><code>position: relative</code> 在父元素上为子元素建立一个笛卡尔定位的上下文</li>
+              <li><code>z-index: 1</code> 简历一个新的堆叠文本</li>
+              <li><code>position: relative</code> 在子元素上建立一个伪元素定位的上下文 </li>
+              <li><code>::after</code> 定义一个伪元素.</li>
+              <li><code>position: absolute</code> 使伪元素脱离文档流，将其定位到相对与父元素的地方</li>
+              <li><code>width: 100%</code> 和 <code>height: 100%</code> 将父元素的尺寸填充进伪元素中，使他们大小相等。</li>
+              <li><code>background: inherit</code> 可以让伪元素继承他的父元素的线性渐变背景</li>
+              <li><code>top: 0.5rem</code> 将伪元素从其父元素的位置向下偏移.</li>
+              <li><code>filter: blur(0.4rem)</code> 将伪元素高斯模糊，从而创建一个影子的样式</li>
+              <li><code>opacity: 0.7</code> 设置伪元素的透明度</li>
+              <li><code>z-index: -1</code> 将伪元素定位到父元素的下层</li>
+            </ol>
+            <h4>浏览器兼容</h4>
+            <div>
+              <div class="snippet__browser-support">
+                91.7%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ 需要前缀才能全部兼容.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-filters" target="_blank">https://caniuse.com/#feat=css-filters</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
             <h3 id="easing-variables"><span>Easing variables</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
-            <p>Variables that can be reused for <code>transition-timing-function</code> properties, more powerful than the built-in <code>ease</code>, <code>ease-in</code>, <code>ease-out</code> and <code>ease-in-out</code>.</p>
+            <p>可以被 <code>transition-timing-function</code> 属性重用的变量, 比用 <code>ease</code>, <code>ease-in</code>, <code>ease-out</code> 和 <code>ease-in-out</code> 创建的更强大.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="easing-variables"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
@@ -675,16 +827,15 @@
                 transform: rotate(45deg);
               }
             </style>
-            <h4>Explanation</h4>
-            <p>The variables are defined globally within the <code>:root</code> CSS pseudo-class which matches the root element of a tree representing the document. In HTML, <code>:root</code> represents the <code>&lt;html&gt;</code> element and is identical
-              to the selector <code>html</code>, except that its specificity is higher.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p>变量使用 <code>:root</code> 这个CSS 伪类来全局定义，这样就可以匹配文档树中的根节点. 在HTML中, <code>:root</code> 代表了 <code>&lt;html&gt;</code> 元素和 <code>html</code>选择器是相同的,除了它的特异性要高点.</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 88.0%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没啥警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
@@ -695,7 +846,7 @@
           </div>
           <div class="snippet">
             <h3 id="etched-text"><span>Etched text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Creates an effect where text appears to be "etched" or engraved into the background.</p>
+            <p>创建一种文本被‘蚀刻’或者浮刻在背景上的效果</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="etched-text"&gt;I appear etched into the background.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.etched-text {
@@ -717,17 +868,17 @@
                 text-shadow: 0 2px 0 white;
               }
             </style>
-            <h4>Explanation</h4>
-            <p><code>text-shadow: 0 2px white</code> creates a white shadow offset <code>0px</code> horizontally and <code>2px</code> vertically from the origin position.</p>
-            <p>The background must be darker than the shadow for the effect to work.</p>
-            <p>The text color should be slightly faded to make it look like it's engraved/carved out of the background.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p><code>text-shadow: 0 2px white</code> 创建一个白色的阴影，相对于初始位置水平偏移为<code>0px</code> 和 垂直偏移为<code>2px</code> </p>
+            <p>背景必须要比阴影更黑才能有效果</p>
+            <p>文本颜色应该稍微暗点，使它看起来像刻在背景上一样</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.1%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>

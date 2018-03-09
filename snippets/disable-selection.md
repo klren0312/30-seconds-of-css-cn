@@ -1,4 +1,4 @@
-### 内容不可选中
+### Disable selection
 
 使内容不可选择
 

@@ -1,4 +1,4 @@
-### 自定义文本选中样式
+### Custom text selection
 
 改变文本选中后的样式.
 

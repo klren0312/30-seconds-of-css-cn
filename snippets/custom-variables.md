@@ -1,4 +1,4 @@
-### 自定义css变量
+### Custom variables
 
 包含特殊值的 CSS 变量可以在整个文档中使用
 
