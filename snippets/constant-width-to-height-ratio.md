@@ -1,7 +1,6 @@
 ### Constant width to height ratio
 
-Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion
-(i.e., its width to height ratio remains constant).
+给一个元素可变的宽度，它将确保其高度保持适当的响应形式(也就是说，它的宽度和高度比例是保持不变的).
 
 #### HTML
 
@@ -21,7 +20,7 @@ Given an element of variable width, it will ensure its height remains proportion
 
 #### Demo
 
-Resize your browser window to see the proportion of the element remain the same.
+更改你的浏览器窗口，来查看元素的比例是保持不变的
 
 <div class="snippet-demo">
   <div class="snippet-demo__constant-width-to-height-ratio"></div>
@@ -35,13 +34,14 @@ Resize your browser window to see the proportion of the element remain the same.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-`padding-top` and `padding-bottom` can be used as an alternative to `height` such that the percentage value
-causes an element's height to become a percentage of its parent's width, i.e. `50%` means the height will be 50% of the parent element's width, which means it acts the same as `width`. This allows its proportion to remain constant.
+`padding-top` 使用在 `::before` 伪元素上可以使元素的高度与他的宽度成比例. `100% `意思是元素的高度永远是 `100% `的宽度, 创建了一个响应式的空间.
 
-#### Browser support
+这个方法通常也使用在放在元素里的内容.
 
-<span class="snippet__support-note">⚠️ `padding-top` pushes any content within the element to the bottom.</span>
+#### 浏览器兼容性
+
+<span class="snippet__support-note">✅没啥警告.</span>
 
 <!-- tags: layout -->

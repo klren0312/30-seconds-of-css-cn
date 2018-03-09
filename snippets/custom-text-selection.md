@@ -1,11 +1,11 @@
 ### Custom text selection
 
-Changes the styling of text selection.
+改变文本选中后的样式.
 
 #### HTML
 
 ```html
-<p class="custom-text-selection">Select some of this text.</p>
+<p class="custom-text-selection">选中这个文本，即可看到样式改变</p>
 ```
 
 #### CSS
@@ -24,7 +24,7 @@ Changes the styling of text selection.
 #### Demo
 
 <div class="snippet-demo">
-  <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
+  <p class="snippet-demo__custom-text-selection">选中这个文本，即可看到样式改变.</p>
 </div>
 
 <style>
@@ -38,14 +38,13 @@ Changes the styling of text selection.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+`::selection` 定义一个伪选择器，用在一个文本元素被选择的时候。如果你不能联系到其他选择器，你的样式将被用到全局，所有元素被选择后都会更改。
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
-in any specification.</span>
+<span class="snippet__support-note">⚠️需要完整支持前缀并且不在规范中</span>
 
 * https://caniuse.com/#feat=css-selection
 

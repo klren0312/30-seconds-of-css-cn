@@ -1,6 +1,6 @@
 ### Custom scrollbar
 
-Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
+自定义内容和元素的滚动条, 可在 WebKit 内核的浏览器中使用.
 
 #### HTML
 
@@ -67,17 +67,17 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `::-webkit-scrollbar` targets the whole scrollbar element.
-2. `::-webkit-scrollbar-track` targets only the scrollbar track.
-3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.
+1. `::-webkit-scrollbar` 指向整个滚动条元素.
+2. `::-webkit-scrollbar-track` 只指向滚动条的轨道.
+3. `::-webkit-scrollbar-thumb` 指向滚动条条体.
 
-There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/)
+这里有很多你能修饰滚动条的其他伪元素。获取更多信息，可以访问[WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/)
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
+<span class="snippet__support-note">⚠️ 滚动条样式并不在标准上.</span>
 
 * https://caniuse.com/#feat=css-scrollbar
 
