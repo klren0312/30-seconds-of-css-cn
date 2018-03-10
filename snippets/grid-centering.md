@@ -1,6 +1,6 @@
 ### Grid centering
 
-Horizontally and vertically centers a child element within a parent element using `grid`.
+使用`grid`，在父元素中水平和垂直方向居中一个子元素.
 
 #### HTML
 
@@ -37,15 +37,15 @@ Horizontally and vertically centers a child element within a parent element usin
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `display: grid` enables grid.
-2. `justify-content: center` centers the child horizontally.
-3. `align-items: center` centers the child vertically.
+1. `display: grid` 使用grid布局.
+2. `justify-content: center` 子元素水平居中.
+3. `align-items: center` 子元素垂直居中.
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没有警告.</span>
 
 * https://caniuse.com/#feat=css-grid
 
