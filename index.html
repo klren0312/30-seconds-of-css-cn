@@ -26,6 +26,7 @@
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
           <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
+          <a class="sidebar__link" href="#grid-layout"><span>Grid layout</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
@@ -889,7 +890,7 @@
           </div>
           <div class="snippet">
             <h3 id="evenly-distributed-children"><span>Evenly distributed children</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Evenly distributes child elements within a parent element.</p>
+            <p>子元素均匀分布在父元素里</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="evenly-distributed-children"&gt;
   &lt;p&gt;Item1&lt;/p&gt;
   &lt;p&gt;Item2&lt;/p&gt;
@@ -916,19 +917,19 @@
                 justify-content: space-between;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>display: flex</code> enables flexbox.</li>
-              <li><code>justify-content: space-between</code> evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.</li>
+              <li><code>display: flex</code> 应用flex布局.</li>
+              <li><code>justify-content: space-between</code> 将子元素水平方向均匀分布. 第一个子元素定位在页面的左边缘，最后一个元素定位在页面右边缘。</li>
             </ol>
-            <p>Alternatively, use <code>justify-content: space-around</code> to distribute the children with space around them, rather than between them.</p>
-            <h4>Browser support</h4>
+            <p>或者使用 <code>justify-content: space-around</code> 来使子元素从他们周围分散，而不是他们之间分散.</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.1%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ 需要前缀才能完全支持.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
@@ -939,7 +940,7 @@
           </div>
           <div class="snippet">
             <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Horizontally and vertically centers a child element within a parent element using <code>flexbox</code>.</p>
+            <p>使用<code>flexbox</code>，在父元素中水平和垂直方向居中一个子元素</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;
   &lt;div class="child"&gt;Centered content.&lt;/div&gt;
 &lt;/div&gt;
@@ -964,19 +965,19 @@
                 height: 200px;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>display: flex</code> enables flexbox.</li>
-              <li><code>justify-content: center</code> centers the child horizontally.</li>
-              <li><code>align-items: center</code> centers the child vertically.</li>
+              <li><code>display: flex</code> 使用flexbox布局.</li>
+              <li><code>justify-content: center</code> 使子元素水平居中</li>
+              <li><code>align-items: center</code> 使子元素垂直居中</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.1%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ 需要前缀才能完全支持</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
@@ -987,7 +988,7 @@
           </div>
           <div class="snippet">
             <h3 id="gradient-text"><span>Gradient text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Gives text a gradient color.</p>
+            <p>给文本渐变颜色.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="gradient-text"&gt;Gradient text&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.gradient-text {
@@ -1012,19 +1013,19 @@
                 margin: 0;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>background: -webkit-linear-gradient(...)</code> gives the text element a gradient background.</li>
-              <li><code>webkit-text-fill-color: transparent</code> fills the text with a transparent color.</li>
-              <li><code>webkit-background-clip: text</code> clips the background with the text, filling the text with the gradient background as the color.</li>
+              <li><code>background: -webkit-linear-gradient(...)</code> 给文本元素渐变效果.</li>
+              <li><code>webkit-text-fill-color: transparent</code> 用透明颜色填充文本.</li>
+              <li><code>webkit-background-clip: text</code> 用文本剪切背景，然后渐变背景便赋给文本颜色</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 91.5%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Uses non-standard properties.</span></p>
+            <p><span class="snippet__support-note">⚠️ 使用了非标准属性.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=text-stroke" target="_blank">https://caniuse.com/#feat=text-stroke</a>
@@ -1035,7 +1036,7 @@
           </div>
           <div class="snippet">
             <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p>
+            <p>使用<code>grid</code>，在父元素中水平和垂直方向居中一个子元素.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
   &lt;div class="child"&gt;Centered content.&lt;/div&gt;
 &lt;/div&gt;
@@ -1060,19 +1061,121 @@
                 height: 200px;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>display: grid</code> enables grid.</li>
-              <li><code>justify-content: center</code> centers the child horizontally.</li>
-              <li><code>align-items: center</code> centers the child vertically.</li>
+              <li><code>display: grid</code> 使用grid布局.</li>
+              <li><code>justify-content: center</code> 子元素水平居中.</li>
+              <li><code>align-items: center</code> 子元素垂直居中.</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 87.6%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="grid-layout"><span>Grid layout</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>使用 <code>grid</code> 构建的网页架构.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-layout"&gt;
+  &lt;div class="header"&gt;Header&lt;/div&gt;
+  &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="content"&gt;
+    Content
+    &lt;br&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  &lt;/div&gt;
+  &lt;div class="footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-layout {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'sidebar header header'
+    'sidebar content content'
+    'sidebar footer  footer';
+  color: white;
+}
+.grid-layout &gt; div {
+  background: #333;
+  padding: 10px;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.content {
+  grid-area: content;
+}
+.header {
+  grid-area: header;
+}
+.footer {
+  grid-area: footer;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__grid-layout">
+                <div class="box snippet-demo__grid-layout__header">Header</div>
+                <div class="box snippet-demo__grid-layout__sidebar">Sidebar</div>
+                <div class="box snippet-demo__grid-layout__content">Content
+                  <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </div>
+                <div class="box snippet-demo__grid-layout__footer">Footer</div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__grid-layout {
+                margin: 1em;
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: "sidebar header header" "sidebar content content" "sidebar  footer  footer";
+                background-color: #fff;
+                color: white;
+              }
+              .snippet-demo__grid-layout>div {
+                background: #333;
+                padding: 10px;
+              }
+              .snippet-demo__grid-layout__sidebar {
+                grid-area: sidebar;
+              }
+              .snippet-demo__grid-layout__content {
+                grid-area: content;
+              }
+              .snippet-demo__grid-layout__header {
+                grid-area: header;
+              }
+              .snippet-demo__grid-layout__footer {
+                grid-area: footer;
+              }
+            </style>
+            <h4>解释</h4>
+            <ol>
+              <li><code>display: grid</code> 使用grid布局.</li>
+              <li><code>grid-gap: 10px</code> 定义元素间间隔.</li>
+              <li><code>grid-template-columns: repeat(3, 1fr)</code> 定义三个相同defines 3 columns of the same size.</li>
+              <li><code>grid-template-areas</code> 定义grid的区域名称</li>
+              <li><code>grid-area: sidebar</code> 元素使用区域的名称为<code>sidebar</code>.</li>
+            </ol>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                87.6%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
