@@ -1,6 +1,6 @@
 ### Evenly distributed children
 
-Evenly distributes child elements within a parent element.
+子元素均匀分布在父元素里
 
 #### HTML
 
@@ -39,16 +39,15 @@ Evenly distributes child elements within a parent element.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `display: flex` enables flexbox.
-2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
+1. `display: flex` 应用flex布局.
+2. `justify-content: space-between` 将子元素水平方向均匀分布. 第一个子元素定位在页面的左边缘，最后一个元素定位在页面右边缘。
 
-Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
+或者使用 `justify-content: space-around` 来使子元素从他们周围分散，而不是他们之间分散.
 
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
+#### 浏览器兼容性
+<span class="snippet__support-note">⚠️ 需要前缀才能完全支持.</span>
 
 * https://caniuse.com/#feat=flexbox
 
