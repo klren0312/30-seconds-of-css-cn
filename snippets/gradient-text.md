@@ -1,6 +1,6 @@
 ### Gradient text
 
-Gives text a gradient color.
+给文本渐变颜色.
 
 #### HTML
 
@@ -37,16 +37,15 @@ Gives text a gradient color.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
-2. `webkit-text-fill-color: transparent` fills the text with a transparent color.
-3. `webkit-background-clip: text` clips the background with the text, filling the text with
-   the gradient background as the color.
+1. `background: -webkit-linear-gradient(...)` 给文本元素渐变效果.
+2. `webkit-text-fill-color: transparent` 用透明颜色填充文本.
+3. `webkit-background-clip: text` 用文本剪切背景，然后渐变背景便赋给文本颜色
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
+<span class="snippet__support-note">⚠️ 使用了非标准属性.</span>
 
 * https://caniuse.com/#feat=text-stroke
 
