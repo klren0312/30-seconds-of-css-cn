@@ -1,4 +1,5 @@
-# 30 Seconds of CSS
+# 30 Seconds of CSS  
+>中文学习翻译
 
 ![logo](https://i.imgur.com/2L1bMyy.png)
 

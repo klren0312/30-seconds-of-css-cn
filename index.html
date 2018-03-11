@@ -1186,7 +1186,7 @@
           </div>
           <div class="snippet">
             <h3 id="hairline-border"><span>Hairline border</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Gives an element a border equal to 1 native device pixel in width, which can look very sharp and crisp.</p>
+            <p>给一个元素一个等于1像素宽的边框，可以看的很尖锐清脆</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="hairline-border"&gt;text&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.hairline-border {
@@ -1232,18 +1232,19 @@
                 }
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>box-shadow</code>, when only using spread, adds a pseudo-border which can use subpixels*.</li>
-              <li>Use <code>@media (min-resolution: ...)</code> to check the device pixel ratio (<code>1dppx</code> equals 96 DPI), setting the spread of the <code>box-shadow</code> equal to <code>1 / dppx</code>.</li>
+              <li><code>box-shadow</code>, 当只使用spread属性的时候, 会增加可以使用子元素*的伪边框.</li>
+              <li>使用<code>@media (min-resolution: ...)</code> 来检查设备的分辨率 (<code>1dppx</code> = 96 DPI), 设置
+                <code>box-shadow</code> 的spread属性等于 <code>1 / dppx</code>.</li>
             </ol>
-            <h4>Browser Support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.5%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ 需要完全支持替代语法和javascript用户代理检查.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-boxshadow" target="_blank">https://caniuse.com/#feat=css-boxshadow</a>
@@ -1253,15 +1254,15 @@
               </li>
             </ul>
             <hr>
-            <p>*Chrome does not support subpixel values on <code>border</code>. Safari does not support subpixel values on <code>box-shadow</code>. Firefox supports subpixel values on both.</p>
+            <p>*Chrome 不支持子元素的 <code>border</code>变量. Safari 不支持子元素的<code>box-shadow</code>. Firefox 的子元素都支持.</p>
 
             <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="hover-underline-animation"><span>Hover underline animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
-            <p>Creates an animated underline effect when the text is hovered over.</p>
+            <p>制作一个当文本被选中的时候的动态下划线</p>
             <p>
-              <small><strong>Credit:</strong>
+              <small><strong>来源:</strong>
                 <a href="https://flatuicolors.com/" target="_blank">https://flatuicolors.com/</a>
               </small>
             </p>
@@ -1316,27 +1317,26 @@
                 transform-origin: bottom left;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>display: inline-block</code> makes the block <code>p</code> an <code>inline-block</code> to prevent the underline from spanning the entire parent width rather than just the content (text).</li>
-              <li><code>position: relative</code> on the element establishes a Cartesian positioning context for pseudo-elements.</li>
-              <li><code>::after</code> defines a pseudo-element.</li>
-              <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
-              <li><code>width: 100%</code> ensures the pseudo-element spans the entire width of the text block.</li>
-              <li><code>transform: scaleX(0)</code> initially scales the pseudo element to 0 so it has no width and is not visible.</li>
-              <li><code>bottom: 0</code> and <code>left: 0</code> position it to the bottom left of the block.</li>
-              <li><code>transition: transform 0.25s ease-out</code> means changes to <code>transform</code> will be transitioned over 0.25 seconds with an <code>ease-out</code> timing function.</li>
-              <li><code>transform-origin: bottom right</code> means the transform anchor point is positioned at the bottom right of the block.</li>
-              <li><code>:hover::after</code> then uses <code>scaleX(1)</code> to transition the width to 100%, then changes the <code>transform-origin</code> to <code>bottom left</code> so that the anchor point is reversed, allowing it transition out in the
-                other direction when hovered off.</li>
+              <li><code>display: inline-block</code> 给块级元素 <code>p</code> 一个 <code>inline-block</code>属性，防止下划线跨越整个父级元素，而不是仅仅是文本内容</li>
+              <li><code>position: relative</code> 在元素上为伪元素建立一个相对定位的上下文.</li>
+              <li><code>::after</code> 定义一个伪元素.</li>
+              <li><code>position: absolute</code> 让伪元素脱离文档流，让他相对于父元素定位</li>
+              <li><code>width: 100%</code> 确定伪元素达到宽度和文本长度一致</li>
+              <li><code>transform: scaleX(0)</code> 将伪元素的x轴缩放初始化为0，这样它就没有宽度也就不可见</li>
+              <li><code>bottom: 0</code> 和 <code>left: 0</code> 将它定位在区域的左下.</li>
+              <li><code>transition: transform 0.25s ease-out</code> 意思是将在0.25s内转变 <code>transform</code>，并且使用<code>ease-out</code> 的过度效果.</li>
+              <li><code>transform-origin: bottom right</code> 意思是转变的锚点指向区域的右下.</li>
+              <li><code>:hover::after</code> 使用 <code>scaleX(1)</code> 将宽度转变成100%, 然后改变<code>transform-origin</code> 到 <code>bottom left</code> ，这要锚点就被反转，当不选中的时候，就会转变到另一个方向</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=transforms2d" target="_blank">https://caniuse.com/#feat=transforms2d</a>
@@ -1350,9 +1350,9 @@
           </div>
           <div class="snippet">
             <h3 id="mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
-            <p>A hover effect where the gradient follows the mouse cursor.</p>
+            <p>鼠标接触的地方都会有渐变效果</p>
             <p>
-              <small class="snippet__credit"><strong>Credit:</strong>
+              <small class="snippet__credit"><strong>来源:</strong>
                 <a href="https://codepen.io/electerious/pen/MQrRxX" target="_blank">Tobias Reich</a>
               </small>
             </p>
@@ -1446,22 +1446,22 @@ btn.onmousemove = function(e) {
                 }
               })()
             </script>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <p><em>TODO</em></p>
-            <p><strong>Note!</strong></p>
-            <p>If the element's parent has a positioning context (<code>position: relative</code>), you will need to subtract its offsets as well.</p>
+            <p><strong>注意!</strong></p>
+            <p>如果父节点有定位的上下文 (<code>position: relative</code>), 你最好减去它们的位移</p>
             <pre><code class="lang-js">var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
 var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 </code></pre>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 88.0%
               </div>
             </div>
             <p></p>
-            <div class="snippet__requires-javascript">Requires JavaScript</div>
-            <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
+            <div class="snippet__requires-javascript">需要 JavaScript</div>
+            <span class="snippet__support-note">⚠️ 需要 JavaScript.</span>
             <p></p>
             <ul>
               <li>
@@ -1473,7 +1473,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.</p>
+            <p>当有很多内容需要滚动查看的时候，给溢出的元素一个渐变效果，使其更好的呈现</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
   &lt;div class="overflow-scroll-gradient__scroller"&gt;
     Content to be scrolled
@@ -1539,24 +1539,24 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             <script>
               document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
             </script>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for pseudo-elements.</li>
-              <li><code>::after</code> defines a pseudo element.</li>
-              <li><code>background-image: linear-gradient(...)</code> adds a linear gradient that fades from transparent to white (top to bottom).</li>
-              <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
-              <li><code>width: 240px</code> matches the size of the scrolling element (which is a child of the parent that has the pseudo element).</li>
-              <li><code>height: 25px</code> is the height of the fading gradient pseudo-element, which should be kept relatively small.</li>
-              <li><code>bottom: 0</code> positions the pseudo-element at the bottom of the parent.</li>
-              <li><code>pointer-events: none</code> specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.</li>
+              <li><code>position: relative</code> 在父元素上给伪元素建立一个相对定位的上下文</li>
+              <li><code>::after</code> 定义一个伪元素</li>
+              <li><code>background-image: linear-gradient(...)</code> 添加一个线性渐变，从透明变成白色(从上到下).</li>
+              <li><code>position: absolute</code> 让伪元素脱离文档流，并且相对父元素定位</li>
+              <li><code>width: 240px</code> 匹配滚动元素的大小 (一个有伪元素的父元素的子元素).</li>
+              <li><code>height: 25px</code> 是渐变的伪元素的高,应该保持相对的小</li>
+              <li><code>bottom: 0</code> 将伪元素定位在父元素的底部.</li>
+              <li><code>pointer-events: none</code> 伪元素不能当作鼠标事件的目标，但是允许在它后面的文本被选择或交互.</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-gradients" target="_blank">https://caniuse.com/#feat=css-gradients</a>
@@ -1567,7 +1567,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="popout-menu"><span>Popout menu</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
-            <p>Reveals an interactive popout menu on hover.</p>
+            <p>鼠标移动到元素的时候，弹出一个菜单</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference"&gt;
   &lt;div class="popout-menu"&gt;
     Popout menu
@@ -1617,28 +1617,27 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 visibility: visible;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>position: relative</code> on the reference parent establishes a Cartesian positioning context for its child.</li>
-              <li><code>position: absolute</code> takes the popout menu out of the flow of the document and positions it in relation to the parent.</li>
-              <li><code>left: 100%</code> moves the the popout menu 100% of its parent's width from the left.</li>
-              <li><code>visibility: hidden</code> hides the popout menu initially and allows for transitions (unlike <code>display: none</code>).</li>
-              <li><code>.reference:hover &gt; .popout-menu</code> means that when <code>.reference</code> is hovered over, select immediate children with a class of <code>.popout-menu</code> and change their <code>visibility</code> to <code>visible</code>,
-                which shows the popout.</li>
+              <li><code>position: relative</code> 为子元素建立一个相对定位的上下文.</li>
+              <li><code>position: absolute</code> 让弹出菜单脱离文档流来相对父元素定位</li>
+              <li><code>left: 100%</code> 将弹出菜单向左移动到他的父元素的宽度100%</li>
+              <li><code>visibility: hidden</code> 先将将弹出菜单隐藏，并且允许改变(不同于 <code>display: none</code>).</li>
+              <li><code>.reference:hover &gt; .popout-menu</code> 意思是当 <code>.reference</code> 触发, 会立即选择 <code>.popout-menu</code>这个类下的子元素，并改变它们的 <code>visibility</code> 为 <code>visible</code>,就弹出菜单 </li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
 
             <!-- tags: interactivity -->
           </div>
           <div class="snippet">
             <h3 id="pretty-text-underline"><span>Pretty text underline</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>A nicer alternative to <code>text-decoration: underline</code> where descenders do not clip the underline. Natively implemented as <code>text-decoration-skip-ink: auto</code> but it has less control over the underline.</p>
+            <p>当不想下划线挡住文字下方的时候，这是一个比 <code>text-decoration: underline</code> 更好的方式。 原生实现的方式有 <code>text-decoration-skip-ink: auto</code>，但是它对于下划线只有很少的控制</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="pretty-text-underline"&gt;Pretty text underline without clipping descending letters.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.pretty-text-underline {
@@ -1686,20 +1685,18 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </style>
             <h4>Explanation</h4>
             <ol>
-              <li><code>text-shadow: ...</code> has 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use
-                a larger <code>px</code> size.</li>
-              <li><code>background-image: linear-gradient(...)</code> creates a 90deg gradient with the current text color (<code>currentColor</code>).</li>
-              <li>The <code>background-*</code> properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.</li>
-              <li>The <code>::selection</code> pseudo selector ensures the text shadow does not interfere with text selection.
-              </li>
+              <li><code>text-shadow: ...</code> 有四个值用于偏移属性，覆盖了一个4x4 px区域来确保下划线有一个“厚”的覆盖了下行剪切的行的阴影。使用与背景相匹配的颜色。对于更大的字体，使用一个大的 <code>px</code> .</li>
+              <li><code>background-image: linear-gradient(...)</code> 创建一个90度的当前文本颜色的渐变(<code>currentColor</code>).</li>
+              <li><code>background-*</code> 属性，将渐变大小变为1x1px，并且延x轴重复</li>
+              <li><code>::selection</code> 伪选择器确定了文本阴影不会干扰文本选择</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span></p>
+            <p><span class="snippet__support-note">⚠️ 下划线到文本的距离，取决于文本内部度量标准，，所以你必须确保每个人看到的字体是一样的(即不会根据os来决定系统字体).</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>
@@ -1713,7 +1710,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="reset-all-styles"><span>Reset all styles</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Resets all styles to default values with one property. This will not affect <code>direction</code> and <code>unicode-bidi</code> properties.</p>
+            <p>用一个属性来重置所有样式到默认值.这将不会影响 <code>direction</code> 和 <code>unicode-bidi</code> 属性.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reset-all-styles"&gt;
   &lt;h4&gt;Title&lt;/h4&gt;
   &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
@@ -1735,15 +1732,15 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 all: initial;
               }
             </style>
-            <h4>Explanation</h4>
-            <p>The <code>all</code> property allows you to reset all styles (inherited or not) to default values.</p>
-            <h4>Browser support</h4>
+            <h4>解释</h4>
+            <p> <code>all</code> 属性允许你重置所有样式(继承或不继承)变为默认值.</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 88.3%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span></p>
+            <p><span class="snippet__support-note">⚠️ 微软的 Edge 正在考虑中.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-all" target="_blank">https://caniuse.com/#feat=css-all</a>
@@ -1754,7 +1751,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="shape-separator"><span>Shape separator</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.</p>
+            <p>与标准的水平分离相比，使用SVG形状来分离两个不同区域，可以创建更多有趣的视觉外观</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="shape-separator"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.shape-separator {
@@ -1790,24 +1787,23 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 bottom: 0;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>position: relative</code> on the element establishes a Cartesian positioning context for pseudo elements.</li>
-              <li><code>::after</code> defines a pseudo element.</li>
-              <li><code>background-image: url(...)</code> adds the SVG shape (a 24x24 triangle in base64 format) as the background image of the pseudo element, which repeats by default. It must be the same color as the block that is being separated.
-              </li>
-              <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
-              <li><code>width: 100%</code> ensures the element stretches the entire width of its parent.</li>
-              <li><code>height: 24px</code> is the same height as the shape.</li>
-              <li><code>bottom: 0</code> positions the pseudo element at the bottom of the parent.</li>
+              <li><code>position: relative</code> 元素为伪元素创建一个相对定位的上下文.</li>
+              <li><code>::after</code> 定义一个伪元素.</li>
+              <li><code>background-image: url(...)</code> 添加一个SVG形状(一个 base64格式的24x24的三角形) as 的背景图片给伪元素，默认是重复的。它必须与被分离的区域有相同的颜色</li>
+              <li><code>position: absolute</code> 让伪元素脱离文档流，并且相对于父元素定位</li>
+              <li><code>width: 100%</code> 确保元素撑出与父元素一样的宽度</li>
+              <li><code>height: 24px</code> 和形状高度相同</li>
+              <li><code>bottom: 0</code> 将伪元素定位到父元素下方</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.3%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=svg" target="_blank">https://caniuse.com/#feat=svg</a>
@@ -1818,7 +1814,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="sibling-fade"><span>Sibling fade</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
-            <p>Fades out the siblings of a hovered item.</p>
+            <p>当移入一个元素，其他兄弟元素都会褪色</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="sibling-fade"&gt;
   &lt;span&gt;Item 1&lt;/span&gt;
   &lt;span&gt;Item 2&lt;/span&gt;
@@ -1861,18 +1857,18 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 opacity: 0.5;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>transition: opacity 0.2s</code> specifies that changes to opacity will be transitioned over 0.2 seconds.</li>
-              <li><code>.sibling-fade:hover span:not(:hover)</code> specifies that when the parent is hovered, select any <code>span</code> children that are not currently being hovered and change their opacity to <code>0.5</code>.</li>
+              <li><code>transition: opacity 0.2s</code> 在两秒中转变透明度</li>
+              <li><code>.sibling-fade:hover span:not(:hover)</code> 当移入父元素后，选择所有没有移入到的 <code>span</code>元素，并且把他们的透明度改为0.5</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 95.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-sel3" target="_blank">https://caniuse.com/#feat=css-sel3</a>
@@ -1886,7 +1882,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="system-font-stack"><span>System font stack</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Uses the native font of the operating system to get close to a native app feel.</p>
+            <p>使用操作系统原生的字体，使其更接近原生app感觉</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="system-font-stack"&gt;This text uses the system font.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.system-font-stack {
@@ -1903,32 +1899,32 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
               }
             </style>
-            <h4>Explanation</h4>
-            <p>The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).</p>
+            <h4>解释</h4>
+            <p>浏览器查询每个能用的字体，如果能用，就使用第一个能用的字体，以及如果不能找到字体（在系统中或者定义在CSS中的）就换到下一个字体</p>
             <ol>
-              <li><code>-apple-system</code> is San Francisco, used on iOS and macOS (not Chrome however)</li>
-              <li><code>BlinkMacSystemFont</code> is San Francisco, used on macOS Chrome</li>
-              <li><code>Segoe UI</code> is used on Windows 10</li>
-              <li><code>Roboto</code> is used on Android</li>
-              <li><code>Oxygen-Sans</code> is used on GNU+Linux</li>
-              <li><code>Ubuntu</code> is used on Linux</li>
-              <li><code>"Helvetica Neue"</code> and <code>Helvetica</code> is used on macOS 10.10 and below (wrapped in quotes because it has a space)</li>
-              <li><code>Arial</code> is a font widely supported by all operating systems</li>
-              <li><code>sans-serif</code> is the fallback sans-serif font if none of the other fonts are supported</li>
+              <li><code>-apple-system</code> is San Francisco, 在 iOS和macOS (非 Chrome )</li>
+              <li><code>BlinkMacSystemFont</code> is San Francisco, 使用在 macOS 的Chrome</li>
+              <li><code>Segoe UI</code> 使用在 Windows 10</li>
+              <li><code>Roboto</code> 使用在 Android</li>
+              <li><code>Oxygen-Sans</code> 使用在 GNU+Linux</li>
+              <li><code>Ubuntu</code> 使用在 Linux</li>
+              <li><code>"Helvetica Neue"</code> and <code>Helvetica</code> 使用在 macOS 10.10 以及更早 (用引号包裹，因为字体名中有个空格)</li>
+              <li><code>Arial</code> 支持所有操作系统的字体</li>
+              <li><code>sans-serif</code> 如果其他字体都不支持，就选用sans-serif 字体 </li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
 
             <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="triangle"><span>Triangle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>Creates a triangle shape with pure CSS.</p>
+            <p>使用纯CSS创建一个三角形</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="triangle"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.triangle {
@@ -1986,32 +1982,32 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 border-right: 15px solid transparent;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <p>
-              <a href="https://stackoverflow.com/q/7073484" target="_blank">View this link for a detailed explanation.</a>
+              <a href="https://stackoverflow.com/q/7073484" target="_blank">通过这个连接查看详细解释.</a>
             </p>
-            <p>The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite <code>border-*</code> property. For example, a color on <code>border-top</code> means the arrow points downward.</p>
-            <p>Experiment with the <code>px</code> values to change the proportion of the triangle.</p>
-            <h4>Browser support</h4>
+            <p>边框的颜色就使三角形的颜色。三角形的尖端点与 <code>border-*</code>属性对立. 举个例子，<code>border-top</code>的颜色表示了箭头指向下方</p>
+            <p>使用 <code>px</code> 值来改变三角形的比例</p>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
 
             <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="truncate-text"><span>Truncate text</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>…</code>.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text"&gt;If I exceed one line's width, I will be truncated.&lt;/p&gt;
+            <p>如果文本超过一行，他将被截断，末尾用<code>…</code>代替.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text"&gt;如果超过一行，就会被截断.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.truncate-text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 200px;
+  width: 150px;
 }
 </code></pre>
             <h4>Demo</h4>
@@ -2029,20 +2025,20 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 margin: 0;
               }
             </style>
-            <h4>Explanation</h4>
+            <h4>解释</h4>
             <ol>
-              <li><code>overflow: hidden</code> prevents the text from overflowing its dimensions (for a block, 100% width and auto height).</li>
-              <li><code>white-space: nowrap</code> prevents the text from exceeding one line in height.</li>
-              <li><code>text-overflow: ellipsis</code> makes it so that if the text exceeds its dimensions, it will end with an ellipsis.</li>
-              <li><code>width: 200px;</code> ensures the element has a dimension, to know when to get ellipsis</li>
+              <li><code>overflow: hidden</code> 防止文本溢出他的尺寸(对于一个区域, 100% 的宽度和自适应的高度).</li>
+              <li><code>white-space: nowrap</code> 防止文本超过一行的高度</li>
+              <li><code>text-overflow: ellipsis</code> 如果文本超过它的尺寸，他将用省略号代替</li>
+              <li><code>width: 200px;</code> 确保元素有尺寸，来知道何时转变省略号</li>
             </ol>
-            <h4>Browser support</h4>
+            <h4>浏览器兼容性</h4>
             <div>
               <div class="snippet__browser-support">
                 98.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Only works for single line elements.</span></p>
+            <p><span class="snippet__support-note">⚠️ 只工作于一行文本.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=text-overflow" target="_blank">https://caniuse.com/#feat=text-overflow</a>

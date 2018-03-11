@@ -1,6 +1,6 @@
 ### Overflow scroll gradient
 
-Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
+当有很多内容需要滚动查看的时候，给溢出的元素一个渐变效果，使其更好的呈现
 
 #### HTML
 
@@ -79,22 +79,20 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
 </script>
 
-#### Explanation
+#### 解释
 
-1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
-2. `::after` defines a pseudo element.
-3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
-   (top to bottom).
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
-   the pseudo element).
-6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
-7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
-8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
+1. `position: relative` 在父元素上给伪元素建立一个相对定位的上下文
+2. `::after` 定义一个伪元素
+3. `background-image: linear-gradient(...)` 添加一个线性渐变，从透明变成白色(从上到下).
+4. `position: absolute` 让伪元素脱离文档流，并且相对父元素定位
+5. `width: 240px` 匹配滚动元素的大小 (一个有伪元素的父元素的子元素).
+6. `height: 25px` 是渐变的伪元素的高,应该保持相对的小
+7. `bottom: 0` 将伪元素定位在父元素的底部.
+8. `pointer-events: none` 伪元素不能当作鼠标事件的目标，但是允许在它后面的文本被选择或交互.
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没有警告.</span>
 
 * https://caniuse.com/#feat=css-gradients
 

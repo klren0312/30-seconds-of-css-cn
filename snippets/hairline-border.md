@@ -1,7 +1,6 @@
 ### Hairline border
 
-Gives an element a border equal to 1 native device pixel in width, which can look
-very sharp and crisp.
+给一个元素一个等于1像素宽的边框，可以看的很尖锐清脆
 
 #### HTML
 
@@ -65,21 +64,21 @@ very sharp and crisp.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
-2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI),
-   setting the spread of the `box-shadow` equal to `1 / dppx`.
+1. `box-shadow`, 当只使用spread属性的时候, 会增加可以使用子元素\*的伪边框.
+2. 使用`@media (min-resolution: ...)` 来检查设备的分辨率 (`1dppx` = 96 DPI),
+   设置`box-shadow` 的spread属性等于 `1 / dppx`.
 
-#### Browser Support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>
+<span class="snippet__support-note">⚠️ 需要完全支持替代语法和javascript用户代理检查.</span>
 
 * https://caniuse.com/#feat=css-boxshadow
 * https://caniuse.com/#feat=css-media-resolution
 
 <hr>
 
-\*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
+\*Chrome 不支持子元素的  `border`变量. Safari 不支持子元素的`box-shadow`. Firefox 的子元素都支持.
 
 <!-- tags: visual -->

@@ -1,6 +1,6 @@
 ### System font stack
 
-Uses the native font of the operating system to get close to a native app feel.
+使用操作系统原生的字体，使其更接近原生app感觉
 
 #### HTML
 
@@ -29,23 +29,22 @@ Uses the native font of the operating system to get close to a native app feel.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-The browser looks for each successive font, preferring the first one if possible, and
-falls back to the next if it cannot find the font (on the system or defined in CSS).
+浏览器查询每个能用的字体，如果能用，就使用第一个能用的字体，以及如果不能找到字体（在系统中或者定义在CSS中的）就换到下一个字体
 
-1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)
-2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome
-3. `Segoe UI` is used on Windows 10
-4. `Roboto` is used on Android
-5. `Oxygen-Sans` is used on GNU+Linux
-6. `Ubuntu` is used on Linux
-7. `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)
-8. `Arial` is a font widely supported by all operating systems
-9. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
+1. `-apple-system` is San Francisco, 在 iOS和macOS (非 Chrome )
+2. `BlinkMacSystemFont` is San Francisco, 使用在 macOS 的Chrome
+3. `Segoe UI` 使用在 Windows 10
+4. `Roboto` 使用在 Android
+5. `Oxygen-Sans` 使用在 GNU+Linux
+6. `Ubuntu` 使用在 Linux
+7. `"Helvetica Neue"` and `Helvetica` 使用在 macOS 10.10 以及更早 (用引号包裹，因为字体名中有个空格)
+8. `Arial` 支持所有操作系统的字体
+9. `sans-serif` 如果其他字体都不支持，就选用sans-serif 字体  
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没有警告.</span>
 
 <!-- tags: visual -->

@@ -1,6 +1,6 @@
 ### Triangle
 
-Creates a triangle shape with pure CSS.
+使用纯CSS创建一个三角形
 
 #### HTML
 
@@ -76,18 +76,16 @@ Creates a triangle shape with pure CSS.
 }
 </style>
 
-#### Explanation
+#### 解释
 
-[View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
+[通过这个连接查看详细解释.](https://stackoverflow.com/q/7073484)
 
-The color of the border is the color of the triangle. The side the triangle tip points
-corresponds to the opposite `border-*` property. For example, a color on `border-top`
-means the arrow points downward.
+边框的颜色就使三角形的颜色。三角形的尖端点与 `border-*`属性对立. 举个例子，`border-top`的颜色表示了箭头指向下方
 
-Experiment with the `px` values to change the proportion of the triangle.
+使用 `px` 值来改变三角形的比例
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ 没有警告.</span>
 
 <!-- tags: visual -->

@@ -1,8 +1,8 @@
 ### Mouse cursor gradient tracking
 
-A hover effect where the gradient follows the mouse cursor.
+鼠标接触的地方都会有渐变效果
 
-<small class="snippet__credit">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>
+<small class="snippet__credit">**来源:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>
 
 #### HTML
 
@@ -116,24 +116,23 @@ btn.onmousemove = function(e) {
 })()
 </script>
 
-#### Explanation
+#### 解释
 
 _TODO_
 
-**Note!**
+**注意!**
 
-If the element's parent has a positioning context (`position: relative`), you will need to subtract
-its offsets as well.
+如果父节点有定位的上下文 (`position: relative`), 你最好减去它们的位移
 
 ```js
 var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
 var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 ```
 
-#### Browser support
+#### 浏览器兼容性
 
-<div class="snippet__requires-javascript">Requires JavaScript</div>
-<span class="snippet__support-note">⚠️ Requires JavaScript.</span>
+<div class="snippet__requires-javascript">需要 JavaScript</div>
+<span class="snippet__support-note">⚠️ 需要 JavaScript.</span>
 
 * https://caniuse.com/#feat=css-variables
 

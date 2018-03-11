@@ -1,7 +1,7 @@
 ### Pretty text underline
 
-A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
-Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
+当不想下划线挡住文字下方的时候，这是一个比 `text-decoration: underline` 更好的方式。
+原生实现的方式有 `text-decoration-skip-ink: auto`，但是它对于下划线只有很少的控制
 
 #### HTML
 
@@ -66,18 +66,14 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Explanation
 
-1. `text-shadow: ...` has 4 values with offsets that cover a 4x4 px area to ensure the underline
-   has a "thick" shadow that covers the line where descenders clip it. Use a color
-   that matches the background. For a larger font, use a larger `px` size.
-2. `background-image: linear-gradient(...)` creates a 90deg gradient with the current
-   text color (`currentColor`).
-3. The `background-*` properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.
-4. The `::selection` pseudo selector ensures the text shadow does not interfere with text
-   selection.
+1. `text-shadow: ...` 有四个值用于偏移属性，覆盖了一个4x4 px区域来确保下划线有一个“厚”的覆盖了下行剪切的行的阴影。使用与背景相匹配的颜色。对于更大的字体，使用一个大的  `px` .
+2. `background-image: linear-gradient(...)` 创建一个90度的当前文本颜色的渐变(`currentColor`).
+3.  `background-*` 属性，将渐变大小变为1x1px，并且延x轴重复
+4.  `::selection` 伪选择器确定了文本阴影不会干扰文本选择
 
-#### Browser support
+#### 浏览器兼容性
 
-<span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span>
+<span class="snippet__support-note">⚠️ 下划线到文本的距离，取决于文本内部度量标准，，所以你必须确保每个人看到的字体是一样的(即不会根据os来决定系统字体).</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients
