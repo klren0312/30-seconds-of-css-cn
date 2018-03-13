@@ -61,6 +61,7 @@
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
+          <a class="sidebar__link" href="#counter"><span>Counter</span></a>
           <a class="sidebar__link" href="#custom-variables"><span>Custom variables</span></a>
         </section>
       </div>
@@ -382,6 +383,84 @@
             <p><span class="snippet__support-note">✅没啥警告.</span></p>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="counter"><span>Counter</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
+            <p>计数器再本质上是一个由CSS维持的变量，它的值的增加是由CSS规则来追踪它们的使用次数</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;List item&lt;/li&gt;
+  &lt;li&gt;List item&lt;/li&gt;
+  &lt;li&gt;List item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">ul {
+  counter-reset: counter;
+}
+li::before {
+  counter-increment: counter;
+  content: counters(counter, '.') ' ';
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__countable-section">
+                <ul>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>
+                    List item
+                    <ul>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__countable-section ul {
+                counter-reset: counter;
+                list-style-type: none;
+              }
+              .snippet-demo__countable-section li::before {
+                counter-increment: counter;
+                content: counters(counter, '.') ' ';
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>你可以使用一些HTML特征来创建一个有序列表</p>
+            <ol>
+              <li>
+                <p><code>counter-reset</code> 初始化一个计数器，这个属性的值就是计数器的名称。通常计数器从0开始计数。这个属性也可以被用来修改初始值。</p>
+              </li>
+              <li>
+                <p><code>counter-increment</code> 在需要计数的元素里使用. 一旦 <code>counter-reset</code> 初始化,一个定时器的值将增加或减少.</p>
+              </li>
+              <li>
+                <p><code>counter(name, style)</code> 显示一个计数器的值。在 <code>content</code> 属性中使用。这个函数能接受两个参数，第一特是计数器的名字，第二个参数可以是 <code>decimal</code> 或者 <code>upper-roman</code> (默认的是<code>decimal</code> ，这是计数的数字样式，阿拉伯数字或者罗马数字).</p>
+              </li>
+              <li>
+                <p><code>counters(counter, string, style)</code> 显示一个计数器的值。通常在<code>content</code> 属性中使用. 这个函数接受三个参数，第一个是计数器的名称，第二个是计数器的分隔符，可以是一个字符串，第三个参数是计数的数字样式，可以是 <code>decimal</code> 或者 <code>upper-roman</code> (默认是<code>decimal</code>).</p>
+              </li>
+              <li>
+                <p>一个CSS计数器在做提纲列表中非常有用，因为一个新的计数器实例能自动创建子元素。使用 <code>counters()</code> 函数, 可以在嵌套的列表中计数.</p>
+              </li>
+            </ol>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.4%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-counters" target="_blank">https://caniuse.com/#feat=css-counters</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual, other -->
           </div>
           <div class="snippet">
             <h3 id="custom-scrollbar"><span>Custom scrollbar</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
