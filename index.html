@@ -38,6 +38,7 @@
           <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
+          <a class="sidebar__link" href="#not-selector"><span>:not selector</span></a>
           <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
           <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
           <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
@@ -50,6 +51,7 @@
           <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a>
           <a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a>
           <a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a>
+          <a class="sidebar__link" href="#height-transition"><span>Height transition</span></a>
           <a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
         </section>
         <section data-type="interactivity" class="sidebar__section">
@@ -1338,6 +1340,92 @@ li::before {
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <h3 id="height-transition"><span>Height transition</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
+            <p>当元素的高度未知时，转换一个元素的高度从 <code>0</code> 到 <code>auto</code></p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="trigger"&gt;
+  Hover me to see a height transition.
+  &lt;div class="el"&gt;content&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.el {
+  transition: max-height 0.5s;
+  overflow: hidden;
+  max-height: 0;
+}
+.trigger:hover &gt; .el {
+  max-height: var(--max-height);
+}
+</code></pre>
+            <h4 data-type="JavaScript">JavaScript</h4><pre><code class="lang-js">var el = document.querySelector('.el')
+var height = el.scrollHeight
+el.style.setProperty('--max-height', height + 'px')
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__height-transition">
+                滑向我查看高度的转变
+                <div class="snippet-demo__height-transition__el">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue placerat nunc a volutpat. Etiam placerat libero porttitor purus facilisis vehicula. Mauris risus mauris, varius ac consequat eget, iaculis non enim. Proin ut nunc ac massa iaculis
+                  sodales id mattis enim. Cras non diam ac quam pharetra fermentum vel ac nulla. Suspendisse ligula urna, porta non lobortis non, lobortis vel velit. Fusce lectus justo, aliquet eu fringilla auctor, sodales eu orci. Pellentesque habitant
+                  morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__height-transition__el {
+                transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                overflow: hidden;
+                max-height: 0;
+              }
+              .snippet-demo__height-transition:hover>.snippet-demo__height-transition__el {
+                max-height: var(--max-height);
+              }
+            </style>
+            <script>
+              ;
+              (function() {
+                var el = document.querySelector('.snippet-demo__height-transition__el')
+                var height = el.scrollHeight
+                el.style.setProperty('--max-height', height + 'px')
+              })()
+            </script>
+            <h4>解释</h4>
+            <h5 data-type="CSS">CSS</h5>
+            <ol>
+              <li><code>transition: max-height: 0.5s cubic-bezier(...)</code> 指定 <code>max-height</code> 应在0.5秒内转变, 并使用 <code>ease-out-quint</code> 定时方法.</li>
+              <li><code>overflow: hidden</code> 防止隐藏的元素内容溢出容器</li>
+              <li><code>max-height: 0</code> 指定元素最初高度为0.</li>
+              <li><code>.target:hover &gt; .el</code> 指定当移入父元素时，指定一个<code>.el</code> 子节点，然后使用 <code>--max-height</code> 由JavaScript定义的变量.</li>
+            </ol>
+            <h5 data-type="JavaScript">JavaScript</h5>
+            <ol>
+              <li><code>el.scrollHeight</code> 是元素溢出的高度, 将会根据元素的内容动态改变</li>
+              <li><code>el.style.setProperty(...)</code> 设置 <code>--max-height</code> CSS 变量 which is used to specify the用来指定 <code>max-height</code>的元素被移入的时候触发, 允许它由 0 向 auto 转变.</li>
+            </ol>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                88.0%
+              </div>
+            </div>
+            <p></p>
+            <div class="snippet__requires-javascript">需要JavaScript</div>
+            <span class="snippet__support-note">
+  ⚠️ 导致每个动画帧回流，如果该元素下面有过多的元素，那么高度的转换将会滞后
+</span>
+            <p></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
+              </li>
+              <li>
+                <a href="https://caniuse.com/#feat=css-transitions" target="_blank">https://caniuse.com/#feat=css-transitions</a>
+              </li>
+            </ul>
+
+            <!-- tags: animation -->
+          </div>
+          <div class="snippet">
             <h3 id="hover-underline-animation"><span>Hover underline animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>制作一个当文本被选中的时候的动态下划线</p>
             <p>
@@ -1549,6 +1637,70 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </ul>
 
             <!-- tags: visual, interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="not-selector"><span>:not selector</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p> <code>:not</code> 伪选择器对于定义一组元素非常有用，同时使最后（或者指定）的元素无样式</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;ul class="css-not-selector-shortcut"&gt;
+  &lt;li&gt;One&lt;/li&gt;
+  &lt;li&gt;Two&lt;/li&gt;
+  &lt;li&gt;Three&lt;/li&gt;
+  &lt;li&gt;Four&lt;/li&gt;
+  &lt;li&gt;Five&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.css-not-selector-shortcut {
+  display: flex;
+}
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0.75rem;
+}
+li:not(:last-child) {
+  border-right: 2px solid #d2d5e4;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <ul class="snippet-demo__css-not-selector-shortcut">
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+                <li>Four</li>
+                <li>Five</li>
+              </ul>
+            </div>
+            <style>
+              .snippet-demo__css-not-selector-shortcut {
+                display: flex;
+                padding: 0;
+              }
+              .snippet-demo__css-not-selector-shortcut li {
+                list-style-type: none;
+                margin: 0;
+                padding: 0 0.75rem;
+              }
+              .snippet-demo__css-not-selector-shortcut li:not(:last-child) {
+                border-right: 2px solid #d2d5e4
+              }
+            </style>
+            <h4>解释</h4>
+            <p><code>li:not(:last-child)</code> 指定样式应该用于所有 <code>li</code> 元素，除了 <code>:last-child</code>.</p>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.4%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-sel3" target="_blank">https://caniuse.com/#feat=css-sel3</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
