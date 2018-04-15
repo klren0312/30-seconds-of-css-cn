@@ -23,10 +23,12 @@
           <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a>
           <a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a>
           <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
+          <a class="sidebar__link" href="#display-table-centering"><span>Display Table Centering</span></a>
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
           <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
           <a class="sidebar__link" href="#grid-layout"><span>Grid layout</span></a>
+          <a class="sidebar__link" href="#transform-centering"><span>Transform Centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
@@ -39,6 +41,7 @@
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
           <a class="sidebar__link" href="#not-selector"><span>:not selector</span></a>
+          <a class="sidebar__link" href="#offscreen"><span>Offscreen</span></a>
           <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
           <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
           <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
@@ -678,6 +681,80 @@ li::before {
             </ul>
 
             <!-- tags: interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="display-table-centering"><span>Display Table Centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>水平和垂直方向居中一个子节点，可以通过再父节点中使用<code>display: table</code> (作为<code>flexbox</code>的替代方案).</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
+  &lt;div class="center"&gt;
+    &lt;span&gt;中心内容&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
+  border: 1px solid #333;
+  height: 250px;
+  width: 250px;
+}
+.center {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.center &gt; span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__container">
+                <div class="snippet-demo__center">
+                  <span>Centered content</span>
+                </div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__container {
+                border: 1px solid #333;
+                height: 250px;
+                width: 250px;
+              }
+              .snippet-demo__center {
+                display: table;
+                height: 100%;
+                width: 100%;
+              }
+              .snippet-demo__center>span {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+              }
+            </style>
+            <h4>解释</h4>
+            <ol>
+              <li><code>display: table</code> 在 '.center'的节点上允许元素具有类似于 <code>&lt;table&gt;</code> HTML标签的行为.</li>
+              <li>100%的高度和宽度在 '.center'的节点上，允许元素在他的父元素中填充可用的位置.</li>
+              <li><code>display: table-cell</code> 在 '.center &gt; span'节点上允许元素具有类似于<code>&lt;td&gt;</code>HTML标签的行为.</li>
+              <li><code>text-align: center</code> 在 '.center &gt; span'节点的水平方向居中子节点.</li>
+              <li><code>vertical-align: middle</code> 在 '.center &gt; span'节点的垂直方向居中子节点.</li>
+            </ol>
+            <p>最外层的父元素(比如这个例子中的'.container' )必须由固定的长和宽.</p>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=display%3A%20table" target="_blank">https://caniuse.com/#search=display%3A%20table</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="donut-spinner"><span>Donut spinner</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
@@ -1703,6 +1780,90 @@ li:not(:last-child) {
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <h3 id="offscreen"><span>Offscreen</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>一个防弹的方式来完全在视觉上以及DOM定位上隐藏一个元素，同时仍然通过JavaScript允许访问和屏幕阅读器阅读它。当视觉障碍的用户需要更多上下文的时候，这个方法对于无障碍（ADA）开发非常有用。作为一个 的替代品，即替代不能被屏幕阅读器阅读的<code>display: none</code>或者占据DOM物理空间的<code>visibility: hidden</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;a class="button" href="http://pantswebsite.com"&gt;
+  Learn More
+  &lt;span class="offscreen"&gt; about pants&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <a class="button" href="javascript:;">
+                Learn More
+                <span class="offscreen"> about pants</span>
+              </a>
+            </div>
+            <style>
+              .snippet-demo__button {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #7983ff;
+                border: none;
+                border-radius: 0.25rem;
+                color: #fff;
+                cursor: pointer;
+                display: inline-block;
+                font-family: sans-serif;
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                width: auto;
+              }
+              .snippet-demo__button:hover {
+                background-color: #717aef;
+              }
+              .snippet-demo__offscreen {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                width: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+              }
+            </style>
+            <h4>解释</h4>
+            <ol>
+              <li>移出所有边框</li>
+              <li>使用 <code>clip</code> 表明不会显示元素的任何部分</li>
+              <li>给元素宽高都设为1px</li>
+              <li>否定元素的宽高，通过使用 <code>margin: -1px</code></li>
+              <li>隐藏元素溢出的部分</li>
+              <li>移出所有的内边距</li>
+              <li>绝对定位元素，那样他将不能占据DOM的空间</li>
+            </ol>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ 没有警告.</span></p>
+            <p>(及时 <code>clip</code> 技术已经被废弃, 新的 <code>clip-path</code> 最近被非常有限的浏览器支持)</p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=clip" target="_blank">https://caniuse.com/#search=clip</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout, visual -->
+          </div>
+          <div class="snippet">
             <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>当有很多内容需要滚动查看的时候，给溢出的元素一个渐变效果，使其更好的呈现</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
@@ -2152,6 +2313,68 @@ li:not(:last-child) {
             <p><span class="snippet__support-note">✅ 没有警告.</span></p>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="transform-centering"><span>Transform Centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>在父元素中使用<code>position: absolute</code> 和 <code>transform: translate()</code> (一个替代 <code>flexbox</code> 或者<code>display: table</code>的方法)在垂直和水平方向居中子元素。与 <code>flexbox</code>相似, 这个方法不需要你知道你父元素或者子元素的宽高，所以他是一个用于响应式应用的方法。</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="parent"&gt;
+  &lt;div class="child"&gt;Centered content&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.parent {
+  border: 1px solid #333;
+  height: 250px;
+  position: relative;
+  width: 250px;
+}
+.child {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__parent">
+                <div class="snippet-demo__child">Centered content</div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__parent {
+                border: 1px solid #333;
+                height: 250px;
+                position: relative;
+                width: 250px;
+              }
+              .snippet-demo__child {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+            </style>
+            <h4>解释</h4>
+            <ol>
+              <li><code>position: absolute</code> 在子元素上允许它基于包含他的区域中定位</li>
+              <li><code>left: 50%</code> 和 <code>top: 50%</code> 抵消子元素在包含他的区域中左边和上边50%的距离.</li>
+              <li><code>transform: translate(-50%, -50%)</code> 允许子节点的宽高被否定，他将在垂直和水平方向居中</li>
+            </ol>
+            <p>笔记: 固定父元素的宽高是为了demo需要，其实并不需要.</p>
+            <h4>浏览器兼容性</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ 需要添加前缀才能完全支持.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=transform" target="_blank">https://caniuse.com/#search=transform</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="triangle"><span>Triangle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
